@@ -1,0 +1,10 @@
+<h2>Create Profile</h2>
+
+<%= form_for(@profile) do |form| %>
+  <%= form.text_field :name, placeholder: "Name" %>
+  <%= form.text_area :about, placeholder: "About" %>
+  <%= form.text_field :picture_url, placeholder: "Profile Picture" %>
+  <%= form.date_field :birthday, placeholder: "Birthday" %>
+  <%= form.date_field :start_date, placeholder: "Start Date" %>
+  <%= form.submit "Create Profile" %>
+<% end %>

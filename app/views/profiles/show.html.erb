@@ -1,0 +1,18 @@
+<h2><%= @profile.name %>'s Profile!</h2>
+
+<div>
+  <%= image_tag(@profile.picture_url, width: "400") %>
+</div>
+
+<div>
+  <strong>About <%= @profile.name %>: </strong><%= @profile.about %>
+</div>
+
+<div>
+  <strong>Birthday: </strong> <%= time_tag(@profile.birthday) %>
+</div>
+
+<div>
+  <strong>Start Date: </strong> <%= time_tag(@profile.start_date) %>
+</div>
+
