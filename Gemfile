@@ -28,15 +28,10 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 gem 'sass'
-
 gem 'bourbon'
-
 gem 'neat'
-
 gem 'bitters'
-
 gem 'high_voltage', '~> 2.1.0'
-
 gem 'clearance'
 
 group :doc do

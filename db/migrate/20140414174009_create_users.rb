@@ -7,10 +7,6 @@ class CreateUsers < ActiveRecord::Migration
       t.string :confirmation_token, limit: 128
       t.string :remember_token, limit: 128, null: false
       t.string :position
-
-      
-
-
     end
 
     add_index :users, :email
