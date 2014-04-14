@@ -8,7 +8,7 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.create(profile_params)
+    @profile = current_user.create_profile(profile_params)
     redirect_to @profile
   end
 
@@ -16,8 +16,7 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).
-    permit(:name, :about, :picture_url, :start_date, :birthday).
-    merge(user_id: current_user.id)
+      permit(:name, :about, :picture_url, :start_date, :birthday)
   end
 
   def find_profile
