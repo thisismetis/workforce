@@ -1,3 +1,3 @@
 Workforce::Application.routes.draw do
-  root to: "home#show"
+  root "homes#show"
 end
