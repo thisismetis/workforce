@@ -12,6 +12,22 @@ class ProfilesController < ApplicationController
     redirect_to @profile
   end
 
+  def edit
+    @profile = find_profile
+  end
+
+  def update
+    @profile = find_profile
+    @profile.update(profile_params)
+    redirect_to @profile
+  end
+
+  def destroy
+    profile = find_profile
+    profile.destroy
+    redirect_to :root
+  end
+
   private
 
   def profile_params
