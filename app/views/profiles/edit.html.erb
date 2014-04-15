@@ -1,0 +1,11 @@
+<h2> Edit Profile </h2>
+<div>
+  <%= form_for(@profile) do |form| %>
+    <%= form.text_field :name, placeholder: "Name" %>
+    <%= form.text_field :picture_url, placeholder: "Picture Url" %>
+    <%= form.text_area :about, placeholder: "About" %>
+    Birthday: <%= form.date_field :birthday %>
+    Start Date: <%= form.date_field :start_date %>
+    <%= form.submit "Update Profile" %>
+  <% end %>
+</div>

@@ -1,4 +1,6 @@
 <h2><%= @profile.name %>'s Profile!</h2>
+<div>
+  <%= link_to "Edit Profile", edit_profile_path(@profile) %>
 
 <div>
   <%= image_tag(@profile.picture_url, width: "400") %>
@@ -14,5 +16,9 @@
 
 <div>
   <strong>Start Date: </strong> <%= time_tag(@profile.start_date) %>
+</div>
+
+<div>
+  <%= link_to "Delete Profile", @profile, method: :delete %>
 </div>
 
