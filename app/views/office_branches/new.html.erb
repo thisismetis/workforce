@@ -1,0 +1,7 @@
+<h2>Create Office Branch</h2>
+
+<%= form_for(@office_branch) do |form| %>
+  <%= render "form_errors", target: @office_branch %>
+  <%= form.text_field :location, placeholder: "Location" %>
+  <%= form.submit "Create Office Branch" %>
+<% end %>
