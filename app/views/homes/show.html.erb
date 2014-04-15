@@ -1,3 +1,4 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <nav>
   <% if current_user.profile %>
     <%= link_to "Show Profile", current_user.profile %>
@@ -7,6 +8,20 @@
 
   <%= link_to "Departments", departments_path %>
 </nav>
-<% @profile.each do |image| %>
-   <%= link_to image_tag image.avatar.url %>
- <% end %>
+<hr>
+<div>
+<p>New Employee Registrations By Hour:</p>
+<%= area_chart User.group_by_hour(:created_at).count %>
+</div>
+<% @profile.each do |employee| %>
+ <div class="comment">
+  <div class="comment-image">
+    <%= image_tag employee.avatar.url, size: "40x40" %>
+  </div>
+  <div class="comment-content">
+    <h1><%= employee.name %></h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
+    <p class="comment-detail">Date or details about this post</h2>
+  </div>
+</div>
+<% end %>  

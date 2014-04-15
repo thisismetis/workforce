@@ -37,6 +37,9 @@ gem 'high_voltage', '~> 2.1.0'
 gem 'clearance'
 gem 'paperclip'
 gem 'aws-sdk'
+gem 'chartkick'
+gem 'groupdate'
+gem 'rails_admin'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
