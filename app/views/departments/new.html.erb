@@ -1,0 +1,8 @@
+<h2>Create Department</h2>
+
+<%= form_for(@department) do |form| %>
+  <%= render "form_errors", target: @department %>
+  <%= form.text_field :name, placeholder: "Name" %>
+  <%= form.text_area :description, placeholder: "Description" %>
+  <%= form.submit "Create Department" %>
+<% end %>
