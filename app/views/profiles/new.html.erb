@@ -1,9 +1,29 @@
 <h2>Create Profile</h2>
 
+<p>Please add the new employee information in the fields
+below. If you make a mistake, you can correct it on the
+"edit" page.</p>  
+
 <%= form_for(@profile) do |form| %>
   <%= form.file_field :avatar %>
   <%= form.text_area :about, placeholder: "About" %>
-  Birthday: <%= form.date_field :birthday %>
-  Start Date: <%= form.date_field :start_date %>
+  Birthday: <%= form.text_field :birthday %>
+  Start Date: <%= form.text_field :start_date %>
   <%= form.submit "Create Profile" %>
 <% end %>
+
+<script>
+jQuery(function() {
+  return $('#profile_birthday').datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+});
+</script>
+
+<script>
+jQuery(function() {
+  return $('#profile_start_date').datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+});
+</script>
