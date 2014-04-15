@@ -3,7 +3,7 @@ Workforce::Application.routes.draw do
 
   resources :profiles
 
-  resources :departments, only: [:index, :new, :create, :show]
+  resources :departments
 
   resources :office_branches
 
