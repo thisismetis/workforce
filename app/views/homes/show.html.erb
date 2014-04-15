@@ -6,8 +6,10 @@
       <%= link_to "Create Profile", new_profile_path %>
     <% end %>
     <%= link_to "Departments", departments_path %>
+    <%= link_to "Office Branches", office_branches_path %>
   <% end %>
 </nav>
+
 <% @profile.each do |image| %>
    <%= link_to image_tag image.avatar.url %>
- <% end %>
+<% end %>

@@ -1,0 +1,8 @@
+<h2> Edit Office Branch </h2>
+<div>
+  <%= form_for(@office_branch) do |form| %>
+    <%= render "form_errors", target: @office_branch %>
+    <%= form.text_field :location, placeholder: "Location" %>
+    <%= form.submit "Update Office Branch" %>
+  <% end %>
+</div>
