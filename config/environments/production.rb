@@ -6,12 +6,18 @@ Workforce::Application.configure do
   config.paperclip_defaults = {
   :storage => :s3,
   :s3_credentials => {
-    :bucket => ENV['S3_BUCKET_NAME'],
-    :access_key_id => ENV['AWS_ACCESS_KEY_ID'],
-    :secret_access_key => ENV['AWS_SECRET_ACCESS_KEY']
+    bucket: ENV['S3_BUCKET_NAME'],
+    access_key_id: ENV['AWS_ACCESS_KEY_ID'],
+    secret_access_key: ENV['AWS_SECRET_ACCESS_KEY']
     }
   }
   config.cache_classes = true
+
+  # Ruby 1.8 Syntax
+{:this => 'syntax', 'is' => 'fun', #<And:0x10036bb58> => 'flexible'}
+# Ruby 1.9 syntax
+{this: 'syntax', 'will': 'cause', #<Nasty:0x10031bf85>: 'errors'}
+
 
   # Eager load code on boot. This eager loads most of Rails and
   # your application in memory, allowing both thread web servers
