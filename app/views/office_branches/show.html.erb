@@ -1,7 +1,7 @@
 <h2><%= @office_branch.location %></h2>
 <nav>
-	<ul>
-		<li><%= link_to "Office Branches Index", office_branches_path %></li>
+  <ul>
+    <li><%= link_to "Office Branches Index", office_branches_path %></li>
     <li><%= link_to "Edit Office Branch", edit_office_branch_path(@office_branch) %></li>
     <li><%= link_to "Delete Office Branch", @office_branch, method: :delete, confirm: "Are you sure?" %></li>
   </ul>
