@@ -20,6 +20,25 @@ class DepartmentsController < ApplicationController
     @department = find_department
   end
 
+  def edit
+    @department = find_department 
+  end
+
+  def update
+    @department = find_department
+    if @department.update(department_params)
+      redirect_to @department
+    else
+      render :edit
+    end
+  end
+
+  def destroy
+    department = find_department
+    department.destroy
+    redirect_to departments_path
+  end
+
   private
 
   def department_params

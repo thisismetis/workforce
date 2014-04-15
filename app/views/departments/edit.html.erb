@@ -1,0 +1,9 @@
+<h2> Edit Department </h2>
+<div>
+  <%= form_for(@department) do |form| %>
+    <%= render "form_errors", target: @department %>
+    <%= form.text_field :name, placeholder: "Name" %>
+    <%= form.text_area :description, placeholder: "Description" %>
+    <%= form.submit "Update Department" %>
+  <% end %>
+</div>
