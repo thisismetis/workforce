@@ -1,6 +1,7 @@
 <h2><%= @profile.name %>'s Profile!</h2>
 <div>
   <%= link_to "Edit Profile", edit_profile_path(@profile) %>
+</div>
 
 <div>
   <%= image_tag(@profile.picture_url, width: "400") %>
