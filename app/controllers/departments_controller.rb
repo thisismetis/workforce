@@ -21,7 +21,7 @@ class DepartmentsController < ApplicationController
   end
 
   def edit
-    @department = find_department 
+    @department = find_department
   end
 
   def update
