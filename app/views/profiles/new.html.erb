@@ -1,7 +1,6 @@
 <h2>Create Profile</h2>
 
 <%= form_for(@profile) do |form| %>
-  <%= form.text_field :name, placeholder: "Name" %>
   <%= form.file_field :avatar %>
   <%= form.text_area :about, placeholder: "About" %>
   Birthday: <%= form.date_field :birthday %>

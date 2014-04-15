@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140415181446) do
+ActiveRecord::Schema.define(version: 20140415184452) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,7 +26,6 @@ ActiveRecord::Schema.define(version: 20140415181446) do
   create_table "profiles", force: true do |t|
     t.integer  "user_id"
     t.text     "about"
-    t.string   "name",                null: false
     t.date     "start_date"
     t.date     "birthday"
     t.datetime "created_at"
@@ -47,9 +46,11 @@ ActiveRecord::Schema.define(version: 20140415181446) do
     t.string   "confirmation_token", limit: 128
     t.string   "remember_token",     limit: 128,                 null: false
     t.boolean  "admin",                          default: false
+    t.string   "name",               limit: 50,                  null: false
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
+  add_index "users", ["name"], name: "index_users_on_name", using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end
