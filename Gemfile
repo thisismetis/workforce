@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :groups => [:development, :test]
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.3'
 
@@ -33,6 +35,8 @@ gem 'neat'
 gem 'bitters'
 gem 'high_voltage', '~> 2.1.0'
 gem 'clearance'
+gem 'paperclip'
+gem 'aws-sdk'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

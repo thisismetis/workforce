@@ -32,7 +32,7 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).
-      permit(:name, :about, :picture_url, :start_date, :birthday)
+      permit(:name, :about, :picture_url, :start_date, :birthday, :avatar)
   end
 
   def find_profile
