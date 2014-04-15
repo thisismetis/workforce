@@ -1,5 +1,5 @@
 class HomesController < ApplicationController
   def show
-    @profile = Profile.all
+    @profiles = Profile.all
   end
 end
