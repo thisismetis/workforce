@@ -13,17 +13,17 @@
     <a href="#" class="tab-link">Employees</a>
     <section>
       <% @profile.each do |employee| %>
- <div class="comment">
-  <div class="comment-image">
-    <%= image_tag employee.avatar.url, size: "40x40" %>
-  </div>
-  <div class="comment-content">
-    <h1><%= employee.name %></h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
-    <p class="comment-detail">Date or details about this post</h2>
-  </div>
-</div>
-<% end %>
+       <div class="comment">
+        <div class="comment-image">
+          <%= image_tag employee.avatar.url, size: "40x40" %>
+        </div>
+        <div class="comment-content">
+          <h1><%= employee.name %></h1>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
+          <p class="comment-detail">Date or details about this post</h2>
+        </div>
+      </div>
+     <% end %>
     </section>
   </li>
   <li class="tab-header-and-content">

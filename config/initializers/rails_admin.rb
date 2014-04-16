@@ -12,9 +12,11 @@ RailsAdmin.config do |config|
   # config.authorize_with :cancan
 
   ## == PaperTrail ==
-  # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
+  # config.audit_with :paper_trail, 
+  #'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
 
-  ### More at https://github.com/sferik/rails_admin/wiki/Base-configuration
+  ### More at https://github.com/sferik/
+  #rails_admin/wiki/Base-configuration
 
   config.actions do
     dashboard                     # mandatory
