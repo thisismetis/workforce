@@ -3,6 +3,6 @@ class Department < ActiveRecord::Base
   has_many :users
 
   def profiles
-    self.users.map { |user| user.profile || NullProfile.new }
+    users.map(&:profile)
   end
 end

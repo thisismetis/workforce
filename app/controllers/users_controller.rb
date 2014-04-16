@@ -16,7 +16,7 @@ class UsersController < Clearance::UsersController
 
   def show
     @user = find_user
-    @department = @user.department_or_unassigned
+    @department = @user.department
   end
 
   def edit

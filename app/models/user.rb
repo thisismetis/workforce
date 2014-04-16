@@ -2,8 +2,12 @@ class User < ActiveRecord::Base
   include Clearance::User
   has_one :profile, dependent: :destroy
   belongs_to :department
-  
-  def department_or_unassigned
-    department || NullDepartment.new
+
+  def profile
+    super || NullProfile.new
+  end
+
+  def department
+    super || NullDepartment.new
   end
 end
