@@ -1,16 +1,14 @@
 <nav>
   <% if signed_in? %>
     <% if current_user.profile %>
-      <%= link_to "Show Profile", current_user.profile %>
+      <%= link_to "Show Profile", render: current_user.profile %>
     <% else %>
       <%= link_to "Create Profile", new_profile_path %>
     <% end %>
     <%= link_to "Departments", departments_path %>
     <%= link_to "Office Branches", office_branches_path %>
+    <%= link_to "Employee Index", users_path %>
   <% end %>
 </nav>
-<nav>
-  <% @profiles.each do |profile| %>
-    <%= link_to image_tag(profile.avatar.url, width: "300"), profile %>
-  <% end %>
-</nav>
+
+<%= render @profiles %>

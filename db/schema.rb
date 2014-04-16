@@ -45,14 +45,15 @@ ActiveRecord::Schema.define(version: 20140416153737) do
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
-    t.datetime "created_at",                                     null: false
-    t.datetime "updated_at",                                     null: false
-    t.string   "email",                                          null: false
-    t.string   "encrypted_password", limit: 128,                 null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
+    t.string   "email",                          null: false
+    t.string   "encrypted_password", limit: 128, null: false
     t.string   "confirmation_token", limit: 128
-    t.string   "remember_token",     limit: 128,                 null: false
-    t.boolean  "admin",                          default: false
-    t.string   "name",               limit: 50,                  null: false
+    t.string   "remember_token",     limit: 128, null: false
+    t.boolean  "admin"
+    t.string   "name",               limit: 50,  null: false
+    t.integer  "department_id"
     t.text     "address"
     t.string   "phone_number"
     t.string   "emergency_name"
@@ -60,6 +61,7 @@ ActiveRecord::Schema.define(version: 20140416153737) do
     t.string   "emergency_relation"
   end
 
+  add_index "users", ["department_id"], name: "index_users_on_department_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["name"], name: "index_users_on_name", using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
