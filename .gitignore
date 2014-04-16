@@ -16,7 +16,4 @@
 /tmp
 
 .env
-
-S3_BUCKET=workforce_profile_images
-AWS_ACCESS_KEY_ID=AKIAI2QSZP4QC3S2NAEA
-AWS_SECRET_ACCESS_KEY=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
+/public/system
