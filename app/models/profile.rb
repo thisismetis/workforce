@@ -8,7 +8,7 @@ class Profile < ActiveRecord::Base
     user.name
   end
 
-  def exists?
+  def present?
     true
   end
 end
