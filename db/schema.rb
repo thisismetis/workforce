@@ -11,23 +11,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416135432) do
+ActiveRecord::Schema.define(version: 20140416153737) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "contact_informations", force: true do |t|
-    t.integer  "user_id"
-    t.text     "address"
-    t.string   "phone_number"
-    t.string   "emergency_name"
-    t.string   "emergency_number"
-    t.string   "emergency_relation"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "contact_informations", ["user_id"], name: "index_contact_informations_on_user_id", using: :btree
 
   create_table "departments", force: true do |t|
     t.string   "name",        null: false
@@ -66,6 +53,11 @@ ActiveRecord::Schema.define(version: 20140416135432) do
     t.string   "remember_token",     limit: 128,                 null: false
     t.boolean  "admin",                          default: false
     t.string   "name",               limit: 50,                  null: false
+    t.text     "address"
+    t.string   "phone_number"
+    t.string   "emergency_name"
+    t.string   "emergency_number"
+    t.string   "emergency_relation"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", using: :btree

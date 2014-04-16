@@ -1,27 +1,32 @@
 class ContactInformationsController < ApplicationController
   def show
-    @contact_information = find_contact_information
+    @user = find_user
   end
 
-  def new
-    @contact_information = ContactInformation.new
+  def edit
+    @user = find_user
   end
 
-  def create
-    @contact_information = current_user.
-      create_contact_information(contact_information_params)
-    redirect_to @contact_information
+  def update
+    @user = find_user
+    @user.update(contact_information_params)
+    redirect_to [@user, :contact_information]
   end
 
   private
 
   def contact_information_params
-    params.require(:contact_information).
-      permit(:address, :phone_number, :emergency_name, :emergency_number, :emergency_relation)
+    params.require(:user).permit(
+      :address,
+      :phone_number,
+      :emergency_name,
+      :emergency_number,
+      :emergency_relation
+    )
   end
 
-  def find_contact_information
-    ContactInformation.find(params[:id])
+  def find_user
+    User.find(params[:user_id])
   end
 
 end

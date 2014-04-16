@@ -11,5 +11,7 @@ Workforce::Application.routes.draw do
     controller: 'users',
     only: 'create'
 
-  resources :contact_informations, only: [:new, :create, :show]
+  resources :users, only: :nothing do
+    resource :contact_information, only: [:edit, :update, :show]
+  end
 end

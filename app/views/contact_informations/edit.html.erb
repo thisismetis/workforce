@@ -1,10 +1,10 @@
-<h2>Create Contact Information </h2>
+<h2>Edit Contact Information </h2>
 
-<%= form_for(@contact_information) do |form| %>
+<%= form_for @user, url: user_contact_information_path do |form| %>
   <%= form.text_area :address, placeholder: "Address" %>
   <%= form.text_field :phone_number, placeholder: "Phone Number" %>
   <%= form.text_field :emergency_name, placeholder: "Emergency Contact Name" %>
   <%= form.text_field :emergency_number, placeholder: "Emergency Contact Number" %>
   <%= form.text_field :emergency_relation, placeholder: "Emergency Contact Relation" %>
-  <%= form.submit "Create Contact Information" %>
+  <%= form.submit "Edit Contact Information" %>
 <% end %>
