@@ -1,0 +1,26 @@
+<%= @contact_information.name %>'s Contact Information
+
+<div>
+  <strong>Address: </strong><%= @contact_information.address %>
+</div>
+
+<div>
+  <strong>Phone Number: </strong><%= @contact_information.phone_number %>
+</div>
+
+<div>
+  <strong>Emergency Contact: </strong><%= @contact_information.emergency_name %>
+</div>
+
+<div>
+  <strong>Emergency Contact Number: </strong><%= @contact_information.emergency_number %>
+</div>
+
+<div>
+  <strong>Emergency Contact Relation: </strong><%= @contact_information.emergency_relation %>
+</div>
+
+<div>
+  <%= link_to "Back to Profile", @contact_information.profile %>
+</div>
+
