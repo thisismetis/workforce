@@ -9,5 +9,5 @@ Workforce::Application.routes.draw do
 
   resources :users,
     controller: 'users',
-    only: 'create'
+    only: ['create', 'index', 'show', 'edit', 'update']
 end

@@ -18,6 +18,7 @@ class DepartmentsController < ApplicationController
 
   def show
     @department = find_department
+    @profiles = @department.profiles
   end
 
   def edit
