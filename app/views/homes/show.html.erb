@@ -1,14 +1,6 @@
 <%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
-<nav>
-  <% if current_user.profile %>
-    <%= link_to "Show Profile", current_user.profile %>
-  <% else %>
-    <%= link_to "Create Profile", new_profile_path %>
-  <% end %>
 
-  <%= link_to "Departments", departments_path %>
-</nav>
-
+<div class="box">
 <ul class="accordion-tabs-minimal">
   <li class="tab-header-and-content">
     <a href="#" class="tab-link is-active">Visualizations</a>
@@ -47,6 +39,7 @@
     </section>
   </li>
 </ul>
+</div>
 
 <script>
   $(document).ready(function () {

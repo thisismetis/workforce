@@ -1,7 +1,8 @@
-<h2>Departments</h2>
+<h4>Current Departments:</h4>
+<div>
+  <p><%= render @departments %></p>
+</div>
+<div>
+  <%= button_to "Create Department", new_department_path,:method => :get %>
+</div>
 
-<nav>
-  <%= link_to "Create Department", new_department_path %>
-</nav>
-
-<%= render @departments %>

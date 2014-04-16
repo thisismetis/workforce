@@ -41,6 +41,8 @@ gem 'chartkick'
 gem 'groupdate'
 gem 'rails_admin'
 gem 'jquery-ui-rails'
+gem 'american_date'
+
 
 
 group :doc do
