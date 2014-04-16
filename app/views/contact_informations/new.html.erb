@@ -3,8 +3,8 @@
 <%= form_for(@contact_information) do |form| %>
   <%= form.text_area :address, placeholder: "Address" %>
   <%= form.text_field :phone_number, placeholder: "Phone Number" %>
-  <%= form.text_field :emergency_name, placeholder "Emergency Contact Name" %>
-  <%= form.text_field :emergency_number, "Emergency Contact Number" %>
-  <%= form.text_field :emergency_relation, "Emergency Contact Relation" %>
+  <%= form.text_field :emergency_name, placeholder: "Emergency Contact Name" %>
+  <%= form.text_field :emergency_number, placeholder: "Emergency Contact Number" %>
+  <%= form.text_field :emergency_relation, placeholder: "Emergency Contact Relation" %>
   <%= form.submit "Create Contact Information" %>
 <% end %>
