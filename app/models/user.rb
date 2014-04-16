@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
       emergency_name ||
       emergency_number ||
       emergency_relation
+  end
 
   def profile
     super || NullProfile.new
