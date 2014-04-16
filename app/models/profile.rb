@@ -7,4 +7,8 @@ class Profile < ActiveRecord::Base
   def name
     user.name
   end
+
+  def present?
+    true
+  end
 end

@@ -4,4 +4,7 @@ class NullProfile
     "profiles/null"
   end
 
+  def present?
+    false
+  end
 end
