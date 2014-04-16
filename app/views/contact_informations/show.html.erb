@@ -1,0 +1,29 @@
+<%= @user.name %>'s Contact Information
+
+<div>
+  <%= link_to "Edit Contact Information", [:edit, @user, :contact_information] %>
+</div>
+
+<div>
+  <strong>Address: </strong><%= @user.address %>
+</div>
+
+<div>
+  <strong>Phone Number: </strong><%= @user.phone_number %>
+</div>
+
+<div>
+  <strong>Emergency Contact: </strong><%= @user.emergency_name %>
+</div>
+
+<div>
+  <strong>Emergency Contact Number: </strong><%= @user.emergency_number %>
+</div>
+
+<div>
+  <strong>Emergency Contact Relation: </strong><%= @user.emergency_relation %>
+</div>
+
+<div>
+  <%= link_to "Back to Profile", @user.profile %>
+</div>

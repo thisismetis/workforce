@@ -22,4 +22,11 @@
 <div>
   <%= link_to "Delete Profile", @profile, method: :delete %>
 </div>
+<div>
+  <% if @user.has_any_contact_information? %>
+    <%= link_to "Show Contact Information", user_contact_information_path(@user) %>
+  <% else %>
+    <%= link_to "Create Contact Information", edit_user_contact_information_path(@user) %>
+  <% end %>
+</div>
 
