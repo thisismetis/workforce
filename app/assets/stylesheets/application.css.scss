@@ -12,12 +12,9 @@
  *= require_self
  */
 
-$large-screen: new-breakpoint(max-width 1200px 12);
-$medium-screen: new-breakpoint(max-width 1200px 12);
-
 @import "bourbon";
-@import "neat";
 @import "bitters/bitters";
+@import "neat";
 @import "footer";
 @import "header";
 @import "employees";
