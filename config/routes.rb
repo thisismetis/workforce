@@ -10,7 +10,7 @@ Workforce::Application.routes.draw do
 
   resources :users,
     controller: 'users',
-    only: ['create', 'index', 'show', 'edit', 'update']
+    only: ['create', 'index', 'update']
 
   resources :users, only: :nothing do
     resource :contact_information, only: [:edit, :update, :show]

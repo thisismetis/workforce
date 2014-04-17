@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
   has_one :profile, dependent: :destroy
   has_many :salaries, dependent: :destroy
   belongs_to :department
+  belongs_to :office_branch
 
   def has_any_contact_information?
     address ||
@@ -18,6 +19,10 @@ class User < ActiveRecord::Base
 
   def department
     super || NullDepartment.new
+  end
+
+  def office_branch
+    super || NullOfficeBranch.new
   end
 
   def ordered_salaries

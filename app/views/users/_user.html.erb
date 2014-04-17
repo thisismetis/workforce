@@ -1,5 +1,9 @@
 <ul>
   <li>
-    <%= link_to user.name, user %>
+    <% if user.profile.present? %>
+      <%= link_to user.name, user.profile %>
+    <% else %>
+      <%= user.name %>
+    <% end %>
   </li>
 </ul>
