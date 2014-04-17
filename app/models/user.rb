@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :salaries, dependent: :destroy
   belongs_to :department
   belongs_to :office_branch
+  has_many :behavior_reports, dependent: :destroy
 
   def has_any_contact_information?
     address ||

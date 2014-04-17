@@ -1,0 +1,8 @@
+<h2>Edit Behavior Report</h2>
+
+<%= form_for @behavior_report do |form| %>
+  <%= form.text_area :description, placeholder: "Description" %>
+  <%= form.text_area :action_taken, placeholder: "Action Taken" %>
+  Date: <%= form.date_field :date %>
+  <%= form.submit "Update Report" %>
+<% end %>
