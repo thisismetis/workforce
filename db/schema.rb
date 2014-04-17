@@ -11,10 +11,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140417132943) do
+ActiveRecord::Schema.define(version: 20140417185548) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "behavior_reports", force: true do |t|
+    t.date     "date"
+    t.text     "description"
+    t.text     "action_taken"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "departments", force: true do |t|
     t.string   "name",        null: false

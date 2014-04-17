@@ -14,6 +14,9 @@ Workforce::Application.routes.draw do
     resource :contact_information, only: [:edit, :update, :show]
     resources :salaries, only: [:show, :new, :create, :index]
     resource :profile
+    resources :behavior_reports, only: [:new, :create, :index]
   end
+
+  resources :behavior_reports, only: [:edit, :update, :destroy]
 
 end

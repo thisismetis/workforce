@@ -1,0 +1,16 @@
+<h2>New Behavior Report</h2>
+
+<%= form_for @behavior_report, url: user_behavior_reports_path do |form| %>
+  <%= form.text_area :description, placeholder: "Description" %>
+  <%= form.text_area :action_taken, placeholder: "Action Taken" %>
+  Date: <%= form.date_field :date %>
+  <%= form.submit "Create Report" %>
+<% end %>
+
+<script>
+jQuery(function() {
+  return $('#behavior_report_date').datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+});
+</script>

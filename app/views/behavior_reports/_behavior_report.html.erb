@@ -1,0 +1,8 @@
+<br>
+<div>
+  <p><strong><%= behavior_report.date %></strong> | 
+  <%= link_to "edit", edit_behavior_report_path(behavior_report) %> |
+  <%= link_to "delete", behavior_report_path(behavior_report), method: :delete, confirm: "Are you sure?"  %></p>
+  <p><strong>Description:</strong> <%= behavior_report.description %></p>
+  <p><strong>Action Taken:</strong> <%= behavior_report.action_taken %></p>
+</div>
