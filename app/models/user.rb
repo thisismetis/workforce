@@ -19,4 +19,12 @@ class User < ActiveRecord::Base
   def department
     super || NullDepartment.new
   end
+
+  def ordered_salaries
+    salaries.order("date DESC")
+  end
+
+  def current_salary
+    salaries.order("date DESC").first.salary
+  end
 end

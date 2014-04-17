@@ -1,7 +1,6 @@
 class SalariesController < ApplicationController
   def index
     @user = User.find(params[:user_id])
-    @salaries = @user.salaries.order("date DESC")
   end
 
   def new

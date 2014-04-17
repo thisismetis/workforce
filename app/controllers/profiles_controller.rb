@@ -2,7 +2,6 @@ class ProfilesController < ApplicationController
   def show
     @profile = find_profile
     @user = @profile.user
-    @salary = @user.salaries.order("date DESC").first.salary
   end
 
   def new
