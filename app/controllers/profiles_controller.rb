@@ -2,6 +2,8 @@ class ProfilesController < ApplicationController
   def show
     @profile = find_profile
     @user = @profile.user
+    @department = @user.department
+    @office_branch = @user.office_branch
   end
 
   def new
@@ -15,6 +17,7 @@ class ProfilesController < ApplicationController
 
   def edit
     @profile = find_profile
+    @user = @profile.user
   end
 
   def update

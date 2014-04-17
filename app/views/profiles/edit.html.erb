@@ -8,3 +8,13 @@
     <%= form.submit "Update Profile" %>
   <% end %>
 </div>
+<br>
+<h2>Edit Branch and Department </h2>
+<div>
+  <%= form_for(@user) do |form| %>
+    <%= render "form_errors", target: @user %>
+    <%= form.collection_select :department_id, Department.order(:name),:id,:name, include_blank: true %>
+    <%= form.collection_select :office_branch_id, OfficeBranch.order(:location),:id,:location, include_blank: true %>
+    <%= form.submit "Update Branch & Department" %>
+  <% end %>
+</div>

@@ -7,4 +7,5 @@ class NullProfile
   def present?
     false
   end
+
 end

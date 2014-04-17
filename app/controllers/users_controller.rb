@@ -14,19 +14,10 @@ class UsersController < Clearance::UsersController
     @users = User.all
   end
 
-  def show
-    @user = find_user
-    @department = @user.department
-  end
-
-  def edit
-    @user = find_user
-  end
-
   def update
     @user = find_user
     if @user.update(user_params)
-      redirect_to @user
+      redirect_to @user.profile
     else
       render :edit
     end
@@ -35,7 +26,7 @@ class UsersController < Clearance::UsersController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :password, :department_id)
+    params.require(:user).permit(:name, :email, :password, :department_id, :office_branch_id)
   end
 
   def find_user

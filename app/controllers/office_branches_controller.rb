@@ -18,6 +18,7 @@ class OfficeBranchesController < ApplicationController
 
   def show
     @office_branch = find_office_branch
+    @profiles = @office_branch.profiles
   end
 
   def edit

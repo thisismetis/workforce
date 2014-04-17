@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140416153737) do
+ActiveRecord::Schema.define(version: 20140417132943) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -53,17 +53,19 @@ ActiveRecord::Schema.define(version: 20140416153737) do
     t.string   "remember_token",     limit: 128,                 null: false
     t.boolean  "admin",                          default: false
     t.string   "name",               limit: 50,                  null: false
+    t.integer  "department_id"
     t.text     "address"
     t.string   "phone_number"
     t.string   "emergency_name"
     t.string   "emergency_number"
     t.string   "emergency_relation"
-    t.integer  "department_id"
+    t.integer  "office_branch_id"
   end
 
   add_index "users", ["department_id"], name: "index_users_on_department_id", using: :btree
   add_index "users", ["email"], name: "index_users_on_email", using: :btree
   add_index "users", ["name"], name: "index_users_on_name", using: :btree
+  add_index "users", ["office_branch_id"], name: "index_users_on_office_branch_id", using: :btree
   add_index "users", ["remember_token"], name: "index_users_on_remember_token", using: :btree
 
 end
