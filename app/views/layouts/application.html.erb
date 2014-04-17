@@ -7,66 +7,8 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class="navigation">
-  <div class="menu-wrapper">
-    <%= image_tag("mifflin.png", class: "logo") %>
-    </a>
-    <p class="navigation-menu-button" id="js-mobile-menu">MENU</p>
-    <div class="nav">
-      <ul id="navigation-menu">
-        <li><%= link_to "Departments", departments_path %></li>
-        <li><%= link_to 'About Us', page_path('about') %></li>
-        <li><%= link_to 'Policies', page_path('policies') %></li>
-        <li><% if signed_in? %>
-            <a><%= link_to "See Profile", current_user.profile %></a>
-        <li><a><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
-            <% else %>
-        <li><%= link_to 'Sign in', sign_in_path %>
-            <% end %></a></li>
-      </ul>
-    </div>
-  </div>
-</header>
-
-<script>
-  $(function() {
-    var menu = $('#navigation-menu');
-    var menuToggle = $('#js-mobile-menu');
-
-    $(menuToggle).on('click', function(e) {
-      e.preventDefault();
-      menu.slideToggle(function(){
-        if(menu.is(':hidden')) {
-          menu.removeAttr('style');
-        }
-      });
-    });
-  });
-</script>
-
-<div id="flash">
-  <% flash.each do |key, value| %>
-    <div class="flash <%= key %>"><%= value %></div>
-  <% end %>
-</div>
-
+<%= render 'header' %>
 <%= yield %>
-
-</body>
-<footer class="footer-2">
-  <div class="footer-logo">
-    <img src="https://raw.github.com/Magnus-G/Random/master/placeholder_logo_1.png" alt="">
-  </div>
-    <ul>
-      <li><a href="javascript:void(0)">About</a></li>
-      <li><a href="javascript:void(0)">Contact</a></li>
-      <li><a href="javascript:void(0)">Products</a></li>
-    </ul>
-
-    <div class="footer-secondary-links">
-      <ul>
-        <li><a href="javascript:void(0)">Terms and Conditions</a></li>
-        <li><a href="javascript:void(0)">Privacy Policy</a></li>
-      </ul>
-
+<%= render 'footer' %>
+</body>      
 </html>
