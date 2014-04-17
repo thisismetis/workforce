@@ -30,3 +30,12 @@
   <% end %>
 </div>
 
+<div>
+  <% if @user.salaries.present? %>
+    Current Salary: <%= number_to_currency(@user.current_salary) %>
+    <p> <%= link_to "Show Past Salaries", user_salaries_path(@user) %> </p>
+  <% else %>
+    <%= link_to "Create Salary", new_user_salary_path(@user) %>
+  <% end %>
+</div>
+

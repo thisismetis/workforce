@@ -1,6 +1,7 @@
 class User < ActiveRecord::Base
   include Clearance::User
   has_one :profile, dependent: :destroy
+  has_many :salaries, dependent: :destroy
   belongs_to :department
 
   def has_any_contact_information?
@@ -17,5 +18,13 @@ class User < ActiveRecord::Base
 
   def department
     super || NullDepartment.new
+  end
+
+  def ordered_salaries
+    salaries.order("date DESC")
+  end
+
+  def current_salary
+    salaries.order("date DESC").first.salary
   end
 end

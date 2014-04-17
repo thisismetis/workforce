@@ -1,0 +1,10 @@
+<h2>Past Salaries</h2>
+<%= link_to "Add Salary", new_user_salary_path(@user) %>
+
+<ul><% @user.ordered_salaries.each do |salary| %>
+  <p><li><%= number_to_currency(salary.salary) %></li>
+  <li><%= salary.description %></li>
+  <li><%= salary.date %></li></p>
+<% end %></ul>
+
+<%= link_to "Back to Profile", @user.profile %>

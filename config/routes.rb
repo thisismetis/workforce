@@ -14,6 +14,7 @@ Workforce::Application.routes.draw do
 
   resources :users, only: :nothing do
     resource :contact_information, only: [:edit, :update, :show]
+    resources :salaries, only: [:show, :new, :create, :index]
   end
 
 end
