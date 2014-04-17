@@ -8,6 +8,7 @@
     <%= form.submit "Update Profile" %>
   <% end %>
 </div>
+
 <br>
 <h2>Edit Branch and Department </h2>
 <div>
@@ -18,3 +19,19 @@
     <%= form.submit "Update Branch & Department" %>
   <% end %>
 </div>
+
+<script>
+jQuery(function() {
+  return $('#profile_birthday').datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+});
+</script>
+
+<script>
+jQuery(function() {
+  return $('#profile_start_date').datepicker({
+    dateFormat: "yy-mm-dd"
+  });
+});
+</script>
