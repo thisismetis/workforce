@@ -4,7 +4,7 @@
 below. If you make a mistake, you can correct it on the
 "edit" page.</p>  
 
-<%= form_for(@profile) do |form| %>
+<%= form_for(@profile, url: [@user, :profile]) do |form| %>
   <%= form.file_field :avatar %>
   <%= form.text_area :about, placeholder: "About" %>
   Birthday: <%= form.text_field :birthday %>

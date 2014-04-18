@@ -11,13 +11,13 @@
         <li><% if signed_in? %>
               <li><a><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
               <% if current_user.profile.present? %>
-                <li><a><%= link_to "See Profile", current_user. profile %></a></li>
+                <li><a><%= link_to "See Profile", [current_user, :profile] %></a></li>
               <% else %>
-              <li><%= link_to 'Create Profile',new_profile_path %>
+              <li><%= link_to 'Create Profile', [:new, current_user, :profile] %>
               <% end %>
             <% else %>
               <%= link_to "Sign In", sign_in_path %>
-            
+
             <% end %>
            </a></li>
       </ul>
