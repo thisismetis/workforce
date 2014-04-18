@@ -46,4 +46,12 @@
     <%= link_to "Create Salary", new_user_salary_path(@user) %>
   <% end %>
 </div>
+<br>
+<div>
+  Behavior Reports: <%= @user.behavior_reports.count %> |
+  <% if @user.behavior_reports.present? %>
+    <%= link_to "Show Reports", user_behavior_reports_path(@user) %> |
+  <% end %>
+  <%= link_to "New Behavior Reports", new_user_behavior_report_path(@user) %>
+</div>
 
