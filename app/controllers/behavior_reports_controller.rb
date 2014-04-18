@@ -11,7 +11,7 @@ class BehaviorReportsController < ApplicationController
     user = User.find(params[:user_id])
     @behavior_report = user.behavior_reports.new(behavior_report_params)
     if @behavior_report.save
-      redirect_to user.profile
+      redirect_to user_behavior_reports_path
     else
       render :new
     end
