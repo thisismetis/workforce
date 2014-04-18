@@ -1,33 +1,37 @@
 class ProfilesController < ApplicationController
   def show
-    @profile = find_profile
-    @user = @profile.user
+    @user = find_user
+    @profile = @user.profile
     @department = @user.department
     @office_branch = @user.office_branch
   end
 
   def new
+    @user = find_user
     @profile = Profile.new
   end
 
   def create
-    @profile = current_user.create_profile(profile_params)
-    redirect_to @profile
+    user = find_user
+    @profile = user.create_profile(profile_params)
+    redirect_to [user, :profile]
   end
 
   def edit
-    @profile = find_profile
-    @user = @profile.user
+    @user = find_user
+    @profile = @user.profile
   end
 
   def update
-    @profile = find_profile
+    user = find_user
+    @profile = user.profile
     @profile.update(profile_params)
-    redirect_to @profile
+    redirect_to [user, :profile]
   end
 
   def destroy
-    profile = find_profile
+    user = find_user
+    profile = user.profile
     profile.destroy
     redirect_to :root
   end
@@ -39,7 +43,7 @@ class ProfilesController < ApplicationController
       permit(:name, :about, :start_date, :birthday, :avatar)
   end
 
-  def find_profile
-    Profile.find(params[:id])
+  def find_user
+    User.find(params[:user_id])
   end
 end

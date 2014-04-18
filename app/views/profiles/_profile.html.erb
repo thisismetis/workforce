@@ -1,4 +1,4 @@
 <br>
 <nav>
-    <%= link_to image_tag(profile.avatar.url, width: "300"), profile %>
+    <%= link_to image_tag(profile.avatar.url, width: "300"), user_profile_path(profile.user_id) %>
 </nav>

@@ -1,6 +1,6 @@
 <h2><%= @profile.name %>'s Profile!</h2>
 <div>
-  <%= link_to "Edit Profile", edit_profile_path(@profile) %>
+  <%= link_to "Edit Profile", edit_user_profile_path(@user) %>
 </div>
 
 <div>
@@ -28,7 +28,7 @@
 </div>
 
 <div>
-  <%= link_to "Delete Profile", @profile, method: :delete %>
+  <%= link_to "Delete Profile", [@user, :profile], method: :delete %>
 </div>
 <div>
   <% if @user.has_any_contact_information? %>

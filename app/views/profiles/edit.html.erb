@@ -1,6 +1,6 @@
 <h2> Edit Profile </h2>
 <div>
-  <%= form_for(@profile) do |form| %>
+  <%= form_for(@profile, url: [@user, :profile]) do |form| %>
     <%= form.file_field :avatar %>
     <%= form.text_area :about, placeholder: "About" %>
     Birthday: <%= form.date_field :birthday %>
@@ -19,19 +19,3 @@
     <%= form.submit "Update Branch & Department" %>
   <% end %>
 </div>
-
-<script>
-jQuery(function() {
-  return $('#profile_birthday').datepicker({
-    dateFormat: "yy-mm-dd"
-  });
-});
-</script>
-
-<script>
-jQuery(function() {
-  return $('#profile_start_date').datepicker({
-    dateFormat: "yy-mm-dd"
-  });
-});
-</script>

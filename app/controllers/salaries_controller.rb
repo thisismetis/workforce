@@ -10,7 +10,7 @@ class SalariesController < ApplicationController
   def create
     @user = User.find(params[:user_id])
     @salary = @user.salaries.create(salary_params)
-    redirect_to @user.profile
+    redirect_to [@user, :profile]
   end
 
   private
