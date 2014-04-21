@@ -9,6 +9,7 @@ class ProfilesController < ApplicationController
   def new
     @user = find_user
     @profile = Profile.new
+    @user = @profile.user
   end
 
   def create
@@ -20,6 +21,7 @@ class ProfilesController < ApplicationController
   def edit
     @user = find_user
     @profile = @user.profile
+    @job_title_user = JobTitleUser.new
   end
 
   def update

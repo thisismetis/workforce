@@ -43,12 +43,14 @@ gem 'rails_admin'
 gem 'jquery-ui-rails'
 gem 'american_date'
 
-
-
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+
+group :development do 
+  gem "letter_opener"
+end  
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'

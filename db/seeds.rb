@@ -5,3 +5,13 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+job_list = [
+  ["Paper Sales"],
+  ["Branch Manager"],
+  ["Warehouse"],
+  ["Secretary"]
+]
+
+job_list.each do |job|
+  JobTitle.create( :job_title => job[0])
+end

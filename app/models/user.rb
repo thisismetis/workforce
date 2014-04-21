@@ -6,10 +6,19 @@ class User < ActiveRecord::Base
   belongs_to :office_branch
   has_many :behavior_reports, dependent: :destroy
   has_many :performance_reviews, dependent: :destroy
+  has_many :job_title_users
+  has_many :job_titles, through: :job_title_users
 
   def self.search(search_params)
     query = search_params[:query]
     where("name ILIKE :query OR email ILIKE :query", query: "%#{query}%")
+
+  def job_titles
+    super || NullJobTitles.new
+  end  
+
+  def current_job
+    job_titles.last || NullJobTitle.new
   end
 
   def has_any_contact_information?

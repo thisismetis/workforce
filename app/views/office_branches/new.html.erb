@@ -2,6 +2,8 @@
 
 <%= form_for(@office_branch) do |form| %>
   <%= render "form_errors", target: @office_branch %>
-  <%= form.text_field :location, placeholder: "Location" %>
+  <%= form.text_field :city, placeholder: "City" %>
+  <%= form.text_field :state, placeholder: "State" %>
+  <%= form.text_field :country, placeholder: "Country" %>
   <%= form.submit "Create Office Branch" %>
 <% end %>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140421134142) do
+ActiveRecord::Schema.define(version: 20140421182936) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,10 +32,24 @@ ActiveRecord::Schema.define(version: 20140421134142) do
     t.datetime "updated_at"
   end
 
-  create_table "office_branches", force: true do |t|
-    t.string   "location",   null: false
+  create_table "job_title_users", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "job_title_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.date     "date"
+  end
+
+  create_table "job_titles", force: true do |t|
+    t.string "name"
+  end
+
+  create_table "office_branches", force: true do |t|
+    t.string   "city",       null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "state"
+    t.string   "country"
   end
 
   create_table "performance_reviews", force: true do |t|
@@ -87,12 +101,12 @@ ActiveRecord::Schema.define(version: 20140421134142) do
     t.string   "remember_token",     limit: 128,                 null: false
     t.boolean  "admin",                          default: false
     t.string   "name",               limit: 50,                  null: false
+    t.integer  "department_id"
     t.text     "address"
     t.string   "phone_number"
     t.string   "emergency_name"
     t.string   "emergency_number"
     t.string   "emergency_relation"
-    t.integer  "department_id"
     t.integer  "office_branch_id"
   end
 

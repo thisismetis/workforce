@@ -1,4 +1,4 @@
-class CreateSalaries < ActiveRecord::Migration
+rails class CreateSalaries < ActiveRecord::Migration
   def change
     create_table :salaries do |t|
       t.decimal :salary
