@@ -38,5 +38,4 @@ class User < ActiveRecord::Base
   def current_salary
     salaries.order("date DESC").first.salary
   end
-
 end
