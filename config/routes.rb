@@ -19,4 +19,6 @@ Workforce::Application.routes.draw do
 
   resources :behavior_reports, only: [:edit, :update, :destroy]
 
+  resource :search, only: [:show]
+
 end
