@@ -23,7 +23,7 @@ Workforce::Application.routes.draw do
   resources :performance_reviews, only: [:show, :edit, :update, :destroy] do
     resources :topics, only: [:new, :create, :index]
   end
-  
+
   resources :topics, only: [:edit, :update, :destroy]
 
 end
