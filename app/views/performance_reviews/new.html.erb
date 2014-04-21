@@ -1,0 +1,7 @@
+<h2>New Performance Review for <h2>
+
+<%= form_for @performance_review, url: user_performance_reviews_path do |form| %>
+  <%= render "form_errors", target: @performance_review %>
+  Date: <%= form.date_field :date %>
+  <%= form.submit "Add Review Topics" %>
+<% end %>

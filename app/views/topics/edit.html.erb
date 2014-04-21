@@ -1,0 +1,9 @@
+<h2>Edit Topic</h2>
+
+<%= form_for @topic do |form| %>
+  <%= render "form_errors", target: @topic %>
+  <%= form.text_field :category, placeholder: "Review Category" %>
+  <%= form.select :rating, [1, 2, 3, 4, 5] %>
+  <%= form.text_area :note, placeholder: "Notes" %>
+  <%= form.submit "Update Topic" %>
+<% end %>
