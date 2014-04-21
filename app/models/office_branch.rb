@@ -7,6 +7,4 @@ class OfficeBranch < ActiveRecord::Base
   def profiles
     users.map(&:profile)
   end
-
-  
 end
