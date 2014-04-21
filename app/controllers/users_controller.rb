@@ -1,4 +1,13 @@
 class UsersController < Clearance::UsersController
+
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = find_user
+  end
+
   def create
     @user = User.new(user_params)
 
@@ -10,8 +19,8 @@ class UsersController < Clearance::UsersController
     end
   end
 
-  def index
-    @users = User.all
+  def edit
+    @user = find_user
   end
 
   def update
@@ -21,6 +30,12 @@ class UsersController < Clearance::UsersController
     else
       render :edit
     end
+  end
+
+  def destroy
+    user = find_user
+    user.destroy
+    redirect_to root_path
   end
 
   private
