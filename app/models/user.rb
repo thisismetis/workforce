@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   belongs_to :department
   belongs_to :office_branch
   has_many :job_title_users
-  has_many :job_titles, :through => :job_title_users 
+  has_many :job_titles, through: :job_title_users
 
   def job_titles
     super || NullJobTitles.new
