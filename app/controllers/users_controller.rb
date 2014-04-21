@@ -35,7 +35,7 @@ class UsersController < Clearance::UsersController
   def destroy
     user = find_user
     user.destroy
-    redirect_to :root
+    redirect_to root_path
   end
 
   private
