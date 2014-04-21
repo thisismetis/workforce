@@ -1,0 +1,8 @@
+<h2>Performance Review for <%= @performance_review.user.name %> on <%= @performance_review.date %></h2>
+
+<%= link_to "add topic", new_performance_review_topic_path(@performance_review) %> |
+<%= link_to "delete this review", performance_review_path(@performance_review), method: :delete, confirm: "Are you sure?"  %> |
+<%= link_to "back to performance reviews", user_performance_reviews_path(@performance_review.user) %>
+
+<p><%= render @performance_review.topics %></p>
+

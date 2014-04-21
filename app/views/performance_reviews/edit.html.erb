@@ -1,0 +1,7 @@
+<h2>Edit Performance Review</h2>
+
+<%= form_for @performance_review do |form| %>
+  <%= render "form_errors", target: @performance_review %>
+  Date: <%= form.date_field :date %>
+  <%= form.submit "Update Review" %>
+<% end %>
