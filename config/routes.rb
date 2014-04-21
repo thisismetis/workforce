@@ -17,4 +17,6 @@ Workforce::Application.routes.draw do
     resources :salaries, only: [:show, :new, :create, :index]
   end
 
+  resource :job_title_users, only: ['create']
+
 end

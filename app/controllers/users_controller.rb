@@ -31,7 +31,9 @@ class UsersController < Clearance::UsersController
       :email,
       :password,
       :department_id,
-      :office_branch_id
+      :office_branch_id,
+      :job_title_users,
+      :job_titles
       )
   end
 

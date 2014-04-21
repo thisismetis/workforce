@@ -1,8 +1,12 @@
 class OfficeBranch < ActiveRecord::Base
-  validates :location, presence: true
+  validates :city, presence: true
+  validates :country, presence: true
+
   has_many :users
 
   def profiles
     users.map(&:profile)
   end
+
+  
 end

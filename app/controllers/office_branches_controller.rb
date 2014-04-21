@@ -43,7 +43,7 @@ class OfficeBranchesController < ApplicationController
   private
 
   def office_branch_params
-    params.require(:office_branch).permit(:location)
+    params.require(:office_branch).permit(:city, :state, :country)
   end
 
   def find_office_branch
