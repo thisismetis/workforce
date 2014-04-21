@@ -54,4 +54,11 @@
   <% end %>
   <%= link_to "New Behavior Reports", new_user_behavior_report_path(@user) %>
 </div>
+<div>
+  Performance Reviews: <%= @user.performance_reviews.count %> |
+  <% if @user.performance_reviews.present? %>
+    <%= link_to "Show Perfomance Reviews", user_performance_reviews_path(@user) %> |
+  <% end %>
+  <%= link_to "New Performance Review", new_user_performance_review_path(@user) %>
+</div>
 

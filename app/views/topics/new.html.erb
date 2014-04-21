@@ -1,0 +1,9 @@
+<h2>New Topic for Perfromance Review on <h2>
+
+<%= form_for @topic, url: performance_review_topics_path do |form| %>
+  <%= render "form_errors", target: @topic %>
+  <%= form.text_field :category, placeholder: "Review Category" %>
+  <%= form.select :rating, [1, 2, 3, 4, 5] %>
+  <%= form.text_area :note, placeholder: "Notes" %>
+  <%= form.submit "Add Topic" %>
+<% end %>

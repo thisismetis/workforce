@@ -15,10 +15,17 @@ Workforce::Application.routes.draw do
     resources :salaries, only: [:show, :new, :create, :index]
     resource :profile
     resources :behavior_reports, only: [:new, :create, :index]
+    resources :performance_reviews, only: [:new, :create, :index]
   end
 
   resources :behavior_reports, only: [:edit, :update, :destroy]
 
   resource :search, only: [:show]
+
+  resources :performance_reviews, only: [:show, :edit, :update, :destroy] do
+    resources :topics, only: [:new, :create, :index]
+  end
+
+  resources :topics, only: [:edit, :update, :destroy]
 
 end

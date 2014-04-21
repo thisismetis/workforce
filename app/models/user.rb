@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   belongs_to :department
   belongs_to :office_branch
   has_many :behavior_reports, dependent: :destroy
+  has_many :performance_reviews, dependent: :destroy
 
   def self.search(search_params)
     query = search_params[:query]
