@@ -3,9 +3,9 @@
 <% @users.each do |user| %>
   <% if user.profile.present? %>
     <p><%= user.name %></p>
-      <%= link_to image_tag(user.profile.avatar), [user, :profile] %>
+    <%= link_to image_tag(user.profile.avatar), [user, :profile] %>
   <% else %>
     <p><%= user.name %></p>
-     User has no profile
+    User has no profile
   <% end %>
 <% end %>
