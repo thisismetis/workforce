@@ -71,12 +71,12 @@ ActiveRecord::Schema.define(version: 20140417185548) do
     t.string   "remember_token",     limit: 128,                 null: false
     t.boolean  "admin",                          default: false
     t.string   "name",               limit: 50,                  null: false
-    t.integer  "department_id"
     t.text     "address"
     t.string   "phone_number"
     t.string   "emergency_name"
     t.string   "emergency_number"
     t.string   "emergency_relation"
+    t.integer  "department_id"
     t.integer  "office_branch_id"
   end
 

@@ -6,6 +6,11 @@ class User < ActiveRecord::Base
   belongs_to :office_branch
   has_many :behavior_reports, dependent: :destroy
 
+  def self.search(search_params)
+    query = search_params[:query]
+    where("name ILIKE :query OR email ILIKE :query", query: "%#{query}%")
+  end
+
   def has_any_contact_information?
     address ||
       phone_number ||

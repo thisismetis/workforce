@@ -8,18 +8,29 @@
         <li><%= link_to "Departments", departments_path %></li>
         <li><%= link_to 'About Us', page_path('about') %></li>
         <li><%= link_to 'Policies', page_path('policies') %></li>
-        <li><% if signed_in? %>
-              <li><a><%= link_to 'Sign out', sign_out_path, method: :delete %></li>
-              <% if current_user.profile.present? %>
-                <li><a><%= link_to "See Profile", [current_user, :profile] %></a></li>
-              <% else %>
-              <li><%= link_to 'Create Profile', [:new, current_user, :profile] %>
+        <li class="navigation-search-bar">
+          <div class="search-bar">
+            <div class="search-and-submit">
+              <%= form_for(:search, url: search_path, method: :get) do |form| %>
+                <%= form.text_field :query, placeholder: "Search Employees" %>
+                <button type="submit">
+                  <img src="/search-icon.png" alt="">
+                </button>
               <% end %>
-            <% else %>
-              <%= link_to "Sign In", sign_in_path %>
-
-            <% end %>
-           </a></li>
+            </div>
+          </div>
+        </li>
+        <% if signed_in? %>
+          <li><%= link_to 'Sign Out', sign_out_path, method: :delete %></li>
+          <% if current_user.profile.present? %>
+            <li><%= link_to "See Profile", [current_user, :profile] %></li>
+          <% else %>
+            <li><%= link_to 'Create Profile', [:new, current_user, :profile] %></li>
+          <% end %>
+        <% else %>
+          <li><%= link_to "Sign In", sign_in_path %></li>
+          <li class="sign-up"><%= link_to "Sign Up", sign_up_path %></li>
+        <% end %>
       </ul>
     </div>
   </div>
