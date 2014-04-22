@@ -1,9 +1,9 @@
-<h2>Create Salary</h2>
+<h2>Edit Salary</h2>
 
-<%= form_for @salary, url: user_salaries_path do |form| %>
+<%= form_for @salary do |form| %>
   <%= render "form_errors", target: @salary %>
   <%= form.text_field :salary, placeholder: "Salary" %>
   <%= form.text_area :description, placeholder: "Description" %>
   Date: <%= form.date_field :date %>
-  <%= form.submit "Create Salary" %>
+  <%= form.submit "Update Salary" %>
 <% end %>

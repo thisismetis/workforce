@@ -1,0 +1,7 @@
+<br>
+<h3><%= number_to_currency(salary.salary) %></h3>
+<strong><%= link_to "edit", edit_salary_path(salary) %></strong> |
+<strong><%= link_to "delete", salary_path(salary), method: :delete, confirm: "Are you sure?" %></strong>
+<br>
+Date effective: <%= salary.date %>
+<p><%= salary.description %></p>

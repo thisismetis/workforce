@@ -18,6 +18,8 @@ Workforce::Application.routes.draw do
     resources :performance_reviews, only: [:new, :create, :index]
   end
 
+  resources :salaries, only: [:edit, :update, :destroy]
+
   resources :behavior_reports, only: [:edit, :update, :destroy]
 
   resource :search, only: [:show]
