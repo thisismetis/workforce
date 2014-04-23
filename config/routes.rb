@@ -32,5 +32,7 @@ Workforce::Application.routes.draw do
 
   resource :job_title_users, only: ['create']
 
+  resource :invite, only: [:create]
+
 
 end
