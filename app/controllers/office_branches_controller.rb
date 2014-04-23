@@ -53,8 +53,8 @@ class OfficeBranchesController < ApplicationController
   end
 
   def admin_users_only
-    office_branch = find_office_branch
     unless current_user.admin?
+      office_branch = find_office_branch
       redirect_to office_branch
     end
   end

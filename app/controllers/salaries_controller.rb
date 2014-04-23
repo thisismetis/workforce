@@ -55,8 +55,8 @@ class SalariesController < ApplicationController
   end
 
   def admin_users_only
-    user = find_user
     unless current_user.admin?
+      user = find_user
       redirect_to [user, :profile]
     end
   end
