@@ -2,7 +2,9 @@
 <div>
   <p><%= render @departments %></p>
 </div>
+<% if current_user.admin? %>
 <div>
   <%= button_to "Create Department", new_department_path,:method => :get %>
 </div>
+<% end %>
 

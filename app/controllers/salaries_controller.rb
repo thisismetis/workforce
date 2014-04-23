@@ -1,6 +1,8 @@
 class SalariesController < ApplicationController
+  before_filter :admin_users_only, only: [:index, :new, :edit]
+
   def index
-    @user = User.find(params[:user_id])
+    @user = find_user
   end
 
   def new
@@ -8,7 +10,7 @@ class SalariesController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
+    @user = find_user
     @salary = @user.salaries.new(salary_params)
     if @salary.save
       redirect_to [@user, :profile]
@@ -44,7 +46,18 @@ class SalariesController < ApplicationController
       permit(:salary, :description, :date)
   end
 
+  def find_user
+    User.find(params[:user_id])
+  end
+
   def find_salary
     Salary.find(params[:id])
+  end
+
+  def admin_users_only
+    unless current_user.admin?
+      user = find_user
+      redirect_to [user, :profile]
+    end
   end
 end

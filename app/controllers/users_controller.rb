@@ -6,6 +6,7 @@ class UsersController < Clearance::UsersController
 
   def show
     @user = find_user
+    redirect_to [@user, :profile]
   end
 
   def create
@@ -48,7 +49,8 @@ class UsersController < Clearance::UsersController
       :department_id,
       :office_branch_id,
       :job_title_users,
-      :job_titles
+      :job_titles,
+      :admin
       )
   end
 

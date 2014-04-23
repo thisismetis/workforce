@@ -1,7 +1,8 @@
 <h2>Office Branches</h2>
-
-<nav>
-  <%= link_to "Create Office Branch", new_office_branch_path %>
-</nav>
+<% if current_user.admin? %>
+  <nav>
+    <%= link_to "Create Office Branch", new_office_branch_path %>
+  </nav>
 <br>
+<% end %>
 <%= render @office_branches %>
