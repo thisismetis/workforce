@@ -14,6 +14,10 @@ class User < ActiveRecord::Base
     where("name ILIKE :query OR email ILIKE :query", query: "%#{query}%")
   end
 
+  def admin?
+    admin
+  end
+
   def job_titles
     super || NullJobTitles.new
   end

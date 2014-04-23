@@ -3,6 +3,16 @@
   <%= link_to "Edit Profile", edit_user_profile_path(@user) %>
 </div>
 
+<% if current_user.admin? %>
+  <div>
+    <%= link_to "Delete Profile", [@user, :profile], method: :delete %>
+  </div>
+
+  <div>
+    <%= link_to "Edit User Settings", [:edit, @user] %>
+  </div>
+<% end %>
+
 <div>
   <%= image_tag @profile.avatar.url, width: "400" %>
 </div>
@@ -32,10 +42,6 @@
 </div>
 
 <div>
-  <%= link_to "Delete Profile", [@user, :profile], method: :delete %>
-</div>
-
-<div>
   <% if @user.has_any_contact_information? %>
     <%= link_to "Show Contact Information", user_contact_information_path(@user) %>
   <% else %>
@@ -43,27 +49,39 @@
   <% end %>
 </div>
 
-<div>
+<% if current_user.admin? || current_user == @user %>
   <% if @user.salaries.present? %>
-    Current Salary: <%= number_to_currency(@user.current_salary) %>
-    <p> <%= link_to "Show Past Salaries", user_salaries_path(@user) %> </p>
+    <div>
+      Current Salary: <%= number_to_currency(@user.current_salary) %>
+    </div>
+  <% end %>
+<% end %>
+
+<% if current_user.admin? %>
+  <div>
+  <% if @user.salaries.present? %>
+    <%= link_to "Show Past Salaries", user_salaries_path(@user) %>
   <% else %>
     <%= link_to "Create Salary", new_user_salary_path(@user) %>
   <% end %>
-</div>
-<br>
-<div>
-  Behavior Reports: <%= @user.behavior_reports.count %> |
-  <% if @user.behavior_reports.present? %>
-    <%= link_to "Show Reports", user_behavior_reports_path(@user) %> |
-  <% end %>
-  <%= link_to "New Behavior Reports", new_user_behavior_report_path(@user) %>
-</div>
-<div>
-  Performance Reviews: <%= @user.performance_reviews.count %> |
-  <% if @user.performance_reviews.present? %>
-    <%= link_to "Show Perfomance Reviews", user_performance_reviews_path(@user) %> |
-  <% end %>
-  <%= link_to "New Performance Review", new_user_performance_review_path(@user) %>
-</div>
+  </div>
+<% end %>
+
+<% if current_user.admin? %>
+  <br>
+  <div>
+    Behavior Reports: <%= @user.behavior_reports.count %> |
+    <% if @user.behavior_reports.present? %>
+      <%= link_to "Show Reports", user_behavior_reports_path(@user) %> |
+    <% end %>
+    <%= link_to "New Behavior Reports", new_user_behavior_report_path(@user) %>
+  </div>
+  <div>
+    Performance Reviews: <%= @user.performance_reviews.count %> |
+    <% if @user.performance_reviews.present? %>
+      <%= link_to "Show Perfomance Reviews", user_performance_reviews_path(@user) %> |
+    <% end %>
+    <%= link_to "New Performance Review", new_user_performance_review_path(@user) %>
+  </div>
+<% end %>
 

@@ -1,4 +1,6 @@
 class DepartmentsController < ApplicationController
+  before_filter :admin_users_only, only: [:new, :edit]
+
   def index
     @departments = Department.all
   end
@@ -49,4 +51,12 @@ class DepartmentsController < ApplicationController
   def find_department
     Department.find(params[:id])
   end
+
+  def admin_users_only
+    department  = find_department
+    unless current_user.admin?
+      redirect_to department
+    end
+  end
+
 end

@@ -1,4 +1,6 @@
 class OfficeBranchesController < ApplicationController
+  before_filter :admin_users_only, only: [:new, :edit]
+
   def index
     @office_branches = OfficeBranch.all
   end
@@ -48,5 +50,12 @@ class OfficeBranchesController < ApplicationController
 
   def find_office_branch
     OfficeBranch.find(params[:id])
+  end
+
+  def admin_users_only
+    office_branch = find_office_branch
+    unless current_user.admin?
+      redirect_to office_branch
+    end
   end
 end

@@ -3,8 +3,10 @@
 <nav>
   <ul>
     <li><%= link_to "Departments Index", departments_path %></li>
-    <li><%= link_to "Edit Department", edit_department_path(@department) %></li>
-    <li><%= link_to "Delete Department", @department, method: :delete, confirm: "Are you sure?" %></li>
+    <% if current_user.admin? %>
+      <li><%= link_to "Edit Department", edit_department_path(@department) %></li>
+      <li><%= link_to "Delete Department", @department, method: :delete, confirm: "Are you sure?" %></li>
+    <% end %>
   </ul>
 </nav>
 
