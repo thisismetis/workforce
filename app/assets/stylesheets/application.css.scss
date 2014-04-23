@@ -12,14 +12,14 @@
  *= require_self
  */
 
+
 @import "bourbon";
 @import "bitters/bitters";
 @import "neat";
+@import "variables";
 @import "footer";
 @import "header";
 @import "employees";
-
-
 
 .box {
     padding-top: 30px;
