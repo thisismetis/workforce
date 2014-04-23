@@ -53,7 +53,7 @@ class DepartmentsController < ApplicationController
   end
 
   def admin_users_only
-    department  = find_department
+    department = find_department
     unless current_user.admin?
       redirect_to department
     end
