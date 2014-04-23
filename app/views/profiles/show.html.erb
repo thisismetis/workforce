@@ -28,16 +28,13 @@
 </div>
 
 <div>
-
-  <%= link_to "Delete Profile", [@user, :profile], method: :delete %>
-
   <strong>Job Title: </strong> <%= @user.current_job.name %>
 </div>
 
 <div>
-  <%= link_to "Delete Profile", @profile, method: :delete %>
-
+  <%= link_to "Delete Profile", [@user, :profile], method: :delete %>
 </div>
+
 <div>
   <% if @user.has_any_contact_information? %>
     <%= link_to "Show Contact Information", user_contact_information_path(@user) %>

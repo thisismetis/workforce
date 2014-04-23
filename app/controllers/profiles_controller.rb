@@ -9,7 +9,6 @@ class ProfilesController < ApplicationController
   def new
     @user = find_user
     @profile = Profile.new
-    @user = @profile.user
   end
 
   def create

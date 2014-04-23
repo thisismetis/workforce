@@ -12,10 +12,11 @@ class User < ActiveRecord::Base
   def self.search(search_params)
     query = search_params[:query]
     where("name ILIKE :query OR email ILIKE :query", query: "%#{query}%")
+  end
 
   def job_titles
     super || NullJobTitles.new
-  end  
+  end
 
   def current_job
     job_titles.last || NullJobTitle.new
