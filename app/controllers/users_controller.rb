@@ -25,8 +25,7 @@ class UsersController < Clearance::UsersController
 
   def update
     @user = find_user
-    if @user.update(user_params)
-    else
+    if !@user.update(user_params)
       render :edit
     end
   end

@@ -8,7 +8,7 @@ class DropdownSelector < ActionView::Helpers::FormBuilder
         collection,
         :id,
         text_method,
-        {include_blank: true},
+        { include_blank: true },
         onchange: "this.form.submit_button.click()"
       )
     )
