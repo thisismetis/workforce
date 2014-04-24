@@ -1,0 +1,8 @@
+<h2> Edit Job Title </h2>
+<div>
+  <%= form_for(@job_title) do |form| %>
+    <%= render "form_errors", target: @job_title %>
+    <%= form.text_field :name, placeholder: "name" %>
+    <%= form.submit "Update Job Title" %>
+  <% end %>
+</div>

@@ -1,8 +1,8 @@
-  <div class="invite">
-    <%= form_for(:invite, url: invite_path, method: :post) do |form| %>
-    <%= form.text_field :email, placeholder: "Enter Email Address" %>
-    <button type="submit">
-      <img src="/search-icon.png" alt="">
-    </button>
-    <% end %>
-  </div>
+<div class="invite">
+  <%= form_for(:invite, url: invite_path, method: :post) do |form| %>
+  <%= form.text_field :email, placeholder: "Enter Email Address" %>
+  <button type="submit">
+    <img src="/images/mail-128.png" alt="">
+  </button>
+  <% end %>
+</div>

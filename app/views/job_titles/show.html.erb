@@ -1,0 +1,5 @@
+<h3>Job Title: <%= @job_title.name %></h3>
+
+<% @job_title.users.each do |employee| %>
+  <p><%= link_to employee.name, employee %></p>
+<% end %>  

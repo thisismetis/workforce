@@ -30,7 +30,9 @@ Workforce::Application.routes.draw do
 
   resources :topics, only: [:edit, :update, :destroy]
 
-  resource :job_title_users, only: ['create']
+  resource :job_title_users, only: [:create]
+
+  resources :job_titles
 
   resource :invite, only: [:create]
 
