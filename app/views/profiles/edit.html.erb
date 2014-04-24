@@ -8,13 +8,3 @@
     <%= form.submit "Update Profile" %>
   <% end %>
 </div>
-
-<br>
-
-<div>
-  <%= form_for(@job_title_user) do |form| %>
-    <%= form.hidden_field :user_id, value: @user.id %>
-    <%= form.collection_select :job_title_id, JobTitle.all, :id, :name, include_blank: true %>
-    <%= form.submit "Update Job Title" %>
-  <% end %>
-</div>

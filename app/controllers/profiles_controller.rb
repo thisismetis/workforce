@@ -4,6 +4,7 @@ class ProfilesController < ApplicationController
     @profile = @user.profile
     @department = @user.department
     @office_branch = @user.office_branch
+    @job_title_user = JobTitleUser.new
   end
 
   def new
@@ -20,7 +21,6 @@ class ProfilesController < ApplicationController
   def edit
     @user = find_user
     @profile = @user.profile
-    @job_title_user = JobTitleUser.new
   end
 
   def update

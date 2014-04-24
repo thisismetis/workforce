@@ -31,6 +31,7 @@
   <strong>Start Date: </strong> <%= time_tag(@profile.start_date) %>
 </div>
 
+<% if current_user.admin? %>
 <div>
   <%= form_for @user, builder: DropdownSelector, remote: true do |form| %>
     <%= form.label "Department:" %>
@@ -40,10 +41,22 @@
     <%= form.submit id: "submit_button", style: "display: none" %>
   <% end %>
 </div>
-
 <div>
-  <strong>Job Title: </strong> <%= @user.current_job.name %>
+  <%= form_for(@job_title_user) do |form| %>
+    <%= form.hidden_field :user_id, value: @user.id %>
+    <%= form.label "Job Title:" %>
+    <%= form.collection_select :job_title_id, JobTitle.all, :id, :name, include_blank: true %>
+    <%= form.submit "Update Job Title" %>
+  <% end %>
 </div>
+<% else %>
+  <ul>
+    <li><strong>Department: </strong> <%= @user.department.name %></li>
+    <li><strong>Office Branch: </strong> <%= @user.office_branch.city %></li>
+    <li><strong>Job Title: </strong> <%= @user.current_job.name %></li>
+  </ul>
+<% end %>
+
 <% if signed_in? %>
   <div>
     <% if @user.has_any_contact_information? %>
