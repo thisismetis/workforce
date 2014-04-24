@@ -26,7 +26,6 @@ class UsersController < Clearance::UsersController
   def update
     @user = find_user
     if @user.update(user_params)
-      redirect_to [@user, :profile]
     else
       render :edit
     end
