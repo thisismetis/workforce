@@ -4,8 +4,10 @@
   <%= form.text_field :name, placeholder: "Name" %>
   <%= form.text_field :email, placeholder: "Email" %>
   <%= form.password_field :password, placeholder: "Password" %>
-  <%= form.label :admin %>
-  <%= form.check_box :admin %>
+  <% if current_user.admin? %>
+    <%= form.label :admin %>
+    <%= form.check_box :admin %>
+  <% end %>
   <p><%= form.submit "Update User" %></p>
 <% end %>
 <div>

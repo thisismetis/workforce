@@ -1,8 +1,9 @@
-<%= @user.name %>'s Contact Information
-
-<div>
-  <%= link_to "Edit Contact Information", [:edit, @user, :contact_information] %>
-</div>
+<h2><%= @user.name %>'s Contact Information</h2>
+<% if current_user.admin? || current_user == @user %>
+  <div>
+    <%= link_to "Edit Contact Information", [:edit, @user, :contact_information] %>
+  </div>
+<% end %>
 
 <div>
   <strong>Address: </strong><%= @user.address %>

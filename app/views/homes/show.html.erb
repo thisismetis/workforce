@@ -23,9 +23,20 @@
     </section>
   </li>
   <li class="tab-header-and-content">
-    <a href="#" class="tab-link">Employee Index</a>
+  <a href="#" class="tab-link">Employee Index</a>
     <section>
-      <%= render @profiles %>
+      <% @profiles.each do |profile| %>
+        <div class="comment">
+          <div class="comment-image">
+            <%= image_tag profile.avatar.url %>
+          </div>
+          <div class="comment-content">
+            <h1><%= link_to profile.name, [profile.user, :profile] %></h1>
+            <p> <%= profile.user.current_job.name %> </p>
+            <p class="comment-detail"><%= profile.about %></h2>
+          </div>
+        </div>
+      <% end %>
     </section>
   </li>
 </ul>
