@@ -39,7 +39,6 @@ gem 'paperclip'
 gem 'aws-sdk'
 gem 'chartkick'
 gem 'groupdate'
-gem 'rails_admin'
 gem 'jquery-ui-rails'
 gem 'american_date'
 

@@ -1,5 +1,4 @@
 Workforce::Application.routes.draw do
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   root "homes#show"
 
   resources :departments
@@ -35,5 +34,7 @@ Workforce::Application.routes.draw do
   resources :job_titles
 
   resource :invite, only: [:create]
+
+  resource :admin_dashboard, only: [:show]
 
 end
