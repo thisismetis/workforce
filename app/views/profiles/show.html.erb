@@ -20,11 +20,13 @@
 </div>
 
 <div>
-  <strong>Office Branch: </strong> <%= @office_branch.city %>
-</div>
-
-<div>
-  <strong>Department: </strong> <%= @department.name %>
+  <%= form_for @user, builder: DropdownSelector, remote: true do |form| %>
+    <%= form.label "Department:" %>
+    <%= form.dropdown_select :department_id, Department.order(:name), :name %>
+    <%= form.label "Office Branch:" %>
+    <%= form.dropdown_select :office_branch_id, OfficeBranch.order(:city), :city %>
+    <%= form.submit :id => "submit_button", :style => "display: none" %>
+  <% end %>
 </div>
 
 <div>
