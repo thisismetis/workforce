@@ -1,11 +1,10 @@
 <footer class="footer-2">
   <div class="footer-logo">
-    <img src="https://raw.github.com/Magnus-G/Random/master/placeholder_logo_1.png" alt="">
+    <img src="http://fc01.deviantart.net/fs71/f/2012/034/c/b/dunder_mifflin_paper_company_inc__by_obeyshi-d4okpdj.png" alt="">
   </div>
     <ul>
-      <li><a href="javascript:void(0)">About</a></li>
-      <li><a href="javascript:void(0)">Contact</a></li>
-      <li><a href="javascript:void(0)">Products</a></li>
+      <li><a href="javascript:void(0)"><%= link_to "About Us", page_path('about') %></a></li>
+      <li><a href="javascript:void(0)"><%= link_to "Policies", page_path('policies') %></a></li>
       <% if signed_in? %>
         <li> <%= link_to current_user.email, [:edit, current_user] %> </li>
       <% end %>
