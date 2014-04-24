@@ -1,0 +1,6 @@
+<h2>Create Job Title</h2>
+
+<%= form_for(@job_title) do |form| %>
+  <%= form.text_field :name, placeholder: "Name" %>
+  <%= form.submit "Create Job Title" %>
+<% end %>
