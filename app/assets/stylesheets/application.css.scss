@@ -12,29 +12,14 @@
  *= require_self
  */
 
- html {
-    position: relative;
-    min-height: 100%;
-}
-body {
-    margin: 0 0 100px; /* bottom = footer height */
-}
-.footer-2 {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    height: 100px;
-    width: 100%;
-}
 
 @import "bourbon";
 @import "bitters/bitters";
 @import "neat";
+@import "variables";
 @import "footer";
 @import "header";
 @import "employees";
-
-
 
 .box {
     padding-top: 30px;
