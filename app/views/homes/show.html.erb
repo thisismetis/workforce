@@ -11,34 +11,19 @@
     </section>
   </li>
   <li class="tab-header-and-content">
-    <a href="#" class="tab-link">Employees</a>
+    <a href="#" class="tab-link">Departments</a>
     <section>
-      <% if signed_in? %>
-        <% if current_user.profile.present? %>
-          <% @profiles.each do |employee| %>
-           <div class="comment">
-            <div class="comment-image">
-              <%= image_tag employee.avatar.url, size: "40x40" %>
-            </div>
-            <div class="comment-content">
-              <h1><%= employee.name %></h1>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Optio, aspernatur, quia modi minima debitis tempora ducimus quam vero impedit alias earum nemo error tenetur sed.</p>
-              <p class="comment-detail">Date or details about this post</h2>
-            </div>
-          </div>
-       <% end %>
-      <% end %>
-     <% end %>  
+      <%= pie_chart Department.group(:name).count %>
     </section>
   </li>
   <li class="tab-header-and-content">
-    <a href="#" class="tab-link">Office Branches</a>
+    <a href="#" class="tab-link">Branches Locations</a>
     <section>
       <%= geo_chart @office_branches.group(:country).count %>  <hr>
     </section>
   </li>
   <li class="tab-header-and-content">
-    <a href="#" class="tab-link">Render Profiles</a>
+    <a href="#" class="tab-link">Employee Index</a>
     <section>
       <%= render @profiles %>
     </section>

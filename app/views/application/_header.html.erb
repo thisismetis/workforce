@@ -5,7 +5,9 @@
     <p class="navigation-menu-button" id="js-mobile-menu">MENU</p>
     <div class="nav">
       <ul id="navigation-menu">
-        <li><%= link_to "Departments", departments_path %></li>
+        <% if current_user.admin? %>
+        <li><%= link_to "Admin", admin_dashboard_path %></li>
+        <% end %>
         <li><%= link_to 'About Us', page_path('about') %></li>
         <li><%= link_to 'Policies', page_path('policies') %></li>
         <li class="navigation-search-bar">

@@ -29,6 +29,7 @@ class UsersController < Clearance::UsersController
     if !@user.update(user_params)
       render :edit
     end
+    redirect_to [@user, :profile]
   end
 
   def destroy

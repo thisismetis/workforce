@@ -1,0 +1,64 @@
+<div>
+<ul class="accordion-tabs-minimal">
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link is-active">Add Office Branch</a>
+    <section>
+      <h2>Create Office Branch</h2>
+        <%= form_for(@office_branch) do |form| %>
+          <%= render "form_errors", target: @office_branch %>
+          <%= form.text_field :city, placeholder: "City" %>
+          <%= form.text_field :state, placeholder: "State" %>
+          <%= form.text_field :country, placeholder: "Country" %>
+          <%= form.submit "Create Office Branch" %>
+        <% end %>
+    </section>
+  </li>
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link">Add Department</a>
+    <section>
+      <h2>Create Department</h2>
+        <%= form_for(@department) do |form| %>
+          <%= render "form_errors", target: @department %>
+          <%= form.text_field :name, placeholder: "Name" %>
+          <%= form.text_area :description, placeholder: "Description" %>
+          <%= form.submit "Create Department" %>
+        <% end %>
+    </section>
+  </li>
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link">Invite New Employee</a>
+    <section>
+      <div class="invite">
+        <%= form_for(:invite, url: invite_path, method: :post) do |form| %>
+        <%= form.text_field :email, placeholder: "Enter Email Address" %>
+        <button type="submit">
+          <img src="/images/mail-128.png" alt="">
+        </button>
+        <% end %>
+      </div>    
+    </section>
+  </li>
+</ul>
+<div> 
+
+<script>
+  $(document).ready(function () {
+    $('.accordion-tabs-minimal').each(function(index) {
+      $(this).children('li').first().children('a').addClass('is-active').next().addClass('is-open').show();
+    });
+
+    $('.accordion-tabs-minimal').on('click', 'li > a', function(event) {
+      if (!$(this).hasClass('is-active')) {
+        event.preventDefault();
+        var accordionTabs = $(this).closest('.accordion-tabs-minimal')
+        accordionTabs.find('.is-open').removeClass('is-open').hide();
+
+        $(this).next().toggleClass('is-open').toggle();
+        accordionTabs.find('.is-active').removeClass('is-active');
+        $(this).addClass('is-active');
+      } else {
+        event.preventDefault();
+      }
+    });
+  });
+</script>
