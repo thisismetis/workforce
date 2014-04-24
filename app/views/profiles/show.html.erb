@@ -1,7 +1,9 @@
 <h2><%= @profile.name %>'s Profile!</h2>
-<div>
-  <%= link_to "Edit Profile", edit_user_profile_path(@user) %>
-</div>
+<% if current_user.admin? || current_user == @user %>
+  <div>
+    <%= link_to "Edit Profile", edit_user_profile_path(@user) %>
+  </div>
+<% end %>
 
 <% if current_user.admin? %>
   <div>
@@ -40,14 +42,19 @@
 <div>
   <strong>Job Title: </strong> <%= @user.current_job.name %>
 </div>
-
-<div>
-  <% if @user.has_any_contact_information? %>
-    <%= link_to "Show Contact Information", user_contact_information_path(@user) %>
-  <% else %>
-    <%= link_to "Create Contact Information", edit_user_contact_information_path(@user) %>
-  <% end %>
-</div>
+<% if signed_in? %>
+  <div>
+    <% if @user.has_any_contact_information? %>
+      <%= link_to "Show Contact Information", user_contact_information_path(@user) %>
+    <% else %>
+      <% if current_user == @user %>
+        <%= link_to "Create Contact Information", edit_user_contact_information_path(@user) %>
+      <% else %>
+        No Contact Information
+      <% end %>
+    <% end %>
+  </div>
+<% end %>
 
 <% if current_user.admin? || current_user == @user %>
   <% if @user.salaries.present? %>
