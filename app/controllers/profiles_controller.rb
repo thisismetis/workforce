@@ -41,7 +41,7 @@ class ProfilesController < ApplicationController
 
   def profile_params
     params.require(:profile).
-      permit(:name, :about, :start_date, :birthday, :avatar)
+      permit(:about, :start_date, :birthday, :avatar)
   end
 
   def find_user
