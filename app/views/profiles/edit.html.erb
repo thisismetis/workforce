@@ -10,8 +10,7 @@
 </div>
 
 <br>
-<h2>Edit Branch and Department </h2>
-
+<h2>Edit Department </h2>
 
 <div>
   <%= form_for(@user, remote: true) do |form| %>
@@ -20,7 +19,6 @@
     <%= form.submit :id => "submit_button", :style => "display: none" %>
   <% end %>
 </div>
-
 
 <div>
   <%= form_for(@job_title_user) do |form| %>
