@@ -13,12 +13,18 @@
   <li class="tab-header-and-content">
     <a href="#" class="tab-link">Departments</a>
     <section>
+      <div> 
+        <%= link_to "Department Index", departments_path %>
+      </div>
       <%= pie_chart Department.group(:name).count %>
     </section>
   </li>
   <li class="tab-header-and-content">
-    <a href="#" class="tab-link">Branches Locations</a>
+    <a href="#" class="tab-link">Branch Locations</a>
     <section>
+      <div>
+        <%= link_to "Office Branch Index", office_branches_path %>
+      </div>
       <%= geo_chart @office_branches.group(:country).count %>  <hr>
     </section>
   </li>
