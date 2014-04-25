@@ -35,11 +35,20 @@
           <img src="/images/mail-128.png" alt="">
         </button>
         <% end %>
-      </div>    
+      </div>
+    </section>
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link">Create New Job Title</a>
+    <section>
+      <h2>Create Job Title</h2>
+        <%= form_for(@job_title) do |form| %>
+          <%= form.text_field :name, placeholder: "Name" %>
+          <%= form.submit "Create Job Title" %>
+        <% end %>
     </section>
   </li>
 </ul>
-<div> 
+<div>
 
 <script>
   $(document).ready(function () {
