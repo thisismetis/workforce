@@ -1,5 +1,12 @@
 <div>
-<ul class="accordion-tabs-minimal">
+  <ul class="accordion-tabs-minimal">
+  <li class="tab-header-and-content">
+    <a href="#" class="tab-link is-active">Employee Registrations</a>
+    <section>
+      <p>New Employee Registrations By Hour:</p>
+      <%= area_chart User.group_by_hour(:created_at).count %>
+    </section>
+  </li>
   <li class="tab-header-and-content">
     <a href="#" class="tab-link is-active">Add Office Branch</a>
     <section>

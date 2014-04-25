@@ -4,10 +4,15 @@
 <div class="box">
 <ul class="accordion-tabs-minimal">
   <li class="tab-header-and-content">
-    <a href="#" class="tab-link is-active">Visualizations</a>
+    <a href="#" class="tab-link is-active">Dunder Mifflin Workforce</a>
     <section>
-      <p>New Employee Registrations By Hour:</p>
-      <%= area_chart User.group_by_hour(:created_at).count %>
+      <div class="welcome">
+        <h1>Welcome to Dunder Mifflin's Employee Directory!</h1>
+      </div>
+      <div class="welcome-logo">
+        <p>Powered by</p>
+        <p><%= image_tag "workforce.jpg" %></p>
+      </div>
     </section>
   </li>
   <li class="tab-header-and-content">
