@@ -1,10 +1,12 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
+
 <div>
   <ul class="accordion-tabs-minimal">
   <li class="tab-header-and-content">
     <a href="#" class="tab-link is-active">Employee Registrations</a>
     <section>
       <p>New Employee Registrations By Hour:</p>
-      <%= area_chart User.group_by_hour(:created_at).count %>
+      <%= area_chart @users.group_by_hour(:created_at).count %>
     </section>
   </li>
   <li class="tab-header-and-content">

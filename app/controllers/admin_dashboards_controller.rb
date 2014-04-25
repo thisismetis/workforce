@@ -4,6 +4,7 @@ class AdminDashboardsController < ApplicationController
     @office_branch = OfficeBranch.new
     @department = Department.new
     @job_title = JobTitle.new
+    @users = User.all
   end
 
 end
