@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 gem 'dotenv-rails', :groups => [:development, :test]
-gem 'rails', '4.0.3'
+gem 'rails', '4.2.5.1'
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
 gem 'uglifier', '>= 1.3.0'
