@@ -747,7 +747,7 @@ DEPENDENCIES
   jquery-ui-rails
   letter_opener
   neat
-  paperclip
+  paperclip (~> 5.1)
   pg
   rails (= 4.2.7.1)
   rails_12factor
